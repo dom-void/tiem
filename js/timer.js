@@ -35,14 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
         switch (name) {
             case 'seconds':
                 return this.actualSeconds;
-                break;
+                // break;
             case 'minutes':
                 return this.actualMinutes;
-                break;
+                // break;
             case 'hours':
             case 'work':
                 return this.actualHours;
-                break;
+                // break;
             default:
                 console.log('wrong getTimeValue() param: "seconds", "minutes", "hours" or "work"');
                 break;
