@@ -83,6 +83,10 @@ var hours = minutes * 60;
 var halfDays = hours * 12;
 var days = 2 * halfDays;
 
+var hoursColor = 'rgba(255,0,0,.7)';
+var minutesColor = 'rgba(0,0,255,.5)';
+var secondsColor = 'rgba(100,255,0,.5)';
+var workTimeColor = 'rgba(200,200,200,.9)';
 // import { Time } from './classes.js'
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -103,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         _createClass(Time, [{
-            key: "timeGet",
+            key: 'timeGet',
             value: function timeGet() {
                 var date = new Date();
                 var timeZoneOffset = date.getTimezoneOffset() * minutes;
@@ -111,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return actualTime;
             }
         }, {
-            key: "setTimeParameters",
+            key: 'setTimeParameters',
             value: function setTimeParameters() {
                 var actualTime = this.timeGet();
                 var fullDaysInActualTime = Math.floor(actualTime / halfDays) * halfDays;
@@ -121,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.actualSeconds = ((daylySeconds - (Math.floor(this.actualHours) * hours + Math.floor(this.actualMinutes) * minutes)) / seconds).toFixed(2);
             }
         }, {
-            key: "getTimeValue",
+            key: 'getTimeValue',
             value: function getTimeValue(name) {
                 switch (name) {
                     case 'seconds':
@@ -166,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         _createClass(Dial, [{
-            key: "setStart",
+            key: 'setStart',
             value: function setStart(mode) {
                 switch (mode) {
                     case 'clock':
@@ -181,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }, {
-            key: "setAngle",
+            key: 'setAngle',
             value: function setAngle(side) {
                 time.setTimeParameters();
                 switch (side) {
@@ -205,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }, {
-            key: "draw",
+            key: 'draw',
             value: function draw() {
                 // this.angleStart = angleStart;
                 // this.angleEnd = angleEnd;
@@ -220,11 +224,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         return Dial;
     }();
-
-    var hoursColor = 'rgba(255,0,0,.7)';
-    var minutesColor = 'rgba(0,0,255,.5)';
-    var secondsColor = 'rgba(100,255,0,.5)';
-    var workTimeColor = 'rgba(200,200,200,.9)';
 
     var hoursDial = new Dial('hours', 60, 140, hoursColor);
     hoursDial.fullDialValue = 12;

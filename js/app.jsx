@@ -5,6 +5,10 @@ const hours = minutes * 60;
 const halfDays = hours * 12;
 const days = 2 * halfDays;
 
+const hoursColor = 'rgba(255,0,0,.7)';
+const minutesColor = 'rgba(0,0,255,.5)';
+const secondsColor = 'rgba(100,255,0,.5)';
+const workTimeColor = 'rgba(200,200,200,.9)';
 // import { Time } from './classes.js'
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -14,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // taking seconds in actual 24h period from .getTime()
 
     var switcher = true;
+
 
     class Time {
         constructor() {
@@ -118,12 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
             context.closePath();
         }
     }
-
-    var hoursColor = 'rgba(255,0,0,.7)';
-    var minutesColor = 'rgba(0,0,255,.5)';
-    var secondsColor = 'rgba(100,255,0,.5)';
-    var workTimeColor = 'rgba(200,200,200,.9)';
-
+    
     var hoursDial = new Dial('hours', 60, 140, hoursColor);
     hoursDial.fullDialValue = 12;
     var minutesDial = new Dial('minutes', 40, 110, minutesColor);
