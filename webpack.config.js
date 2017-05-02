@@ -1,6 +1,6 @@
 module.exports = {
-    entry: "./js/zadanie00.jsx",
-    output: { filename: "./js/out.js" },
+    entry: "./js/app.jsx",
+    output: { filename: "./js/app.js" },
     devServer: {
         inline: true,
         contentBase: './',
