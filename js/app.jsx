@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 const seconds = 1000;
 const minutes = seconds * 60;
@@ -12,6 +14,29 @@ const workTimeColor = 'rgba(200,200,200,.9)';
 // import { Time } from './classes.js'
 
 document.addEventListener('DOMContentLoaded', function () {
+    class App extends React.Component {
+        render() {
+            return <div id="container">
+                <h1>Tie'M clock / timer</h1>
+                <canvas id="clock" style={{width: '300px', height: '300px', border: '1px solid #d3d3d3'}}>Your browser does not support the HTML5 canvas tag.</canvas>
+                <div id="buttons">
+                    <div className="buttons">
+                        <div id='button1' className="button">clock</div>
+                        <div id='button2' className="button">timer</div>
+                    </div>
+                    <div className="buttons">
+                        <div id='button3' className="button">energy saving mode</div>
+                        <div id='button4' className="button">reset timer</div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+    ReactDOM.render(
+        <App />,
+        document.getElementById('app')
+    );
 
     const canvas = document.getElementById("clock");
     const context = canvas.getContext("2d");
@@ -123,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
             context.closePath();
         }
     }
-    
+
     var hoursDial = new Dial('hours', 60, 140, hoursColor);
     hoursDial.fullDialValue = 12;
     var minutesDial = new Dial('minutes', 40, 110, minutesColor);
@@ -220,4 +245,8 @@ document.addEventListener('DOMContentLoaded', function () {
         timeOfWorkDial.draw();
         window.requestAnimationFrame(drawLoop);
     }
+
+
+
+
 })
