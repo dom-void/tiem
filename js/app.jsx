@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         render() {
             return <div id="container">
                 <h1>Tie'M clock / timer</h1>
-                <canvas id="clock">Your browser does not support the HTML5 canvas tag.</canvas>
+                <canvas id="clock" style={{height: 300, width: 300}}>Your browser does not support the HTML5 canvas tag.</canvas>
                 <div id="buttons">
                     <div className="buttons">
                         <div id='button1' className="button">clock</div>
