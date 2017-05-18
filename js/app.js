@@ -9579,7 +9579,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ),
                     _react2.default.createElement(
                         'canvas',
-                        { id: 'clock', style: { height: 300, width: 300 } },
+                        { id: 'clock', height: '300px', width: '300px' },
                         'Your browser does not support the HTML5 canvas tag.'
                     ),
                     _react2.default.createElement(
